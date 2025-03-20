@@ -1,7 +1,7 @@
 local mini_path = vim.fn.stdpath('data') .. '/site/pack/deps/start/mini.nvim'
 if not vim.loop.fs_stat(mini_path) then vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/echasnovski/mini.nvim', mini_path }) end
 require('mini.deps').setup({ path = { package = vim.fn.stdpath('data') .. '/site/' } })
-for _, mod in ipairs({ 'icons', 'pairs', 'statusline', 'pick', 'git' }) do require('mini.' .. mod).setup() end
+for _, mod in ipairs({ 'icons', 'pairs', 'statusline' }) do require('mini.' .. mod).setup() end
 
 MiniDeps.add({ source = 'nvim-treesitter/nvim-treesitter', depends = { 'rebelot/kanagawa.nvim' }, hooks = { function() vim.cmd('TSUpdate') end } })
 MiniDeps.add({ source = 'saghen/blink.cmp', depends = { 'rafamadriz/friendly-snippets' } })
@@ -10,6 +10,8 @@ MiniDeps.add({ source = 'nvim-telescope/telescope.nvim', depends = { 'nvim-lua/p
 MiniDeps.add({ source = 'folke/noice.nvim', depends = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } })
 -- MiniDeps.add({ source = 'ThePrimeagen/harpoon', checkout = 'harpoon2' })
 MiniDeps.add({ source = 'ThePrimeagen/vim-be-good' })
+MiniDeps.add({ source = 'folke/trouble.nvim' })
+MiniDeps.add({ source = 'lewis6991/gitsigns.nvim', depends = { 'tpope/vim-fugitive' } })
 
 vim.g.mapleader = " "
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -23,6 +25,9 @@ vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "<leader>vs", ":vertical split<CR>")
 vim.keymap.set("n", "<leader>hs", ":horizontal split<CR>")
+vim.keymap.set("n", "<leader>xx", ":Trouble diagnostics toggle<CR>")
+vim.keymap.set("n", "<leader>xX", ":Trouble diagnostics toggle filter.buf=0<CR>")
+vim.keymap.set("n", "<leader>xQ", ":Trouble qflist toggle<CR>")
 
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.mouse =  ""
@@ -69,7 +74,15 @@ vim.opt.shiftwidth = 4
 --
 -- vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
 --     { desc = "Open harpoon window" })
+--
+require('gitsigns').setup {
+    signs = {
+	add = { text = '+' },
+	delete = { text = '-' },
+    },
+}
 
+require('trouble').setup()
 require('Polydev').setup()
 require('blink.cmp').setup({ keymap = { preset = 'default', ['<C-y>'] = {}, ['<D-y>'] = { 'select_and_accept' } } })
 require('nvim-treesitter.configs').setup({ auto_install = true, highlight = { enable = true }, indent = { enable = true } })
