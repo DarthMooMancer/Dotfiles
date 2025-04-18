@@ -8,7 +8,7 @@ return {
 		opts = {
 		    ensure_installed = {
 			"lua_ls",
-			"basedpyright",
+			"pyright",
 			"clangd",
 			"jdtls",
 		    },
@@ -29,7 +29,7 @@ return {
 				}
 			    }
 			end,
-			["basedpyright"] = function()
+			["pyright"] = function()
 			    require('lspconfig').pyright.setup {
 				python = {
 				    venvPath = { "./venv/bin/python" }
@@ -37,7 +37,6 @@ return {
 			    }
 			end,
 		    }
-
 		}
 	    },
 	},

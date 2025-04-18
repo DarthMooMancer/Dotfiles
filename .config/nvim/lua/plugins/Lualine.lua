@@ -32,39 +32,39 @@ local bubbles_theme = {
     },
 
     visual = {
-        a = { fg = colors.black, bg = colors.pink },       -- black on light_purple
-        b = { fg = colors.white, bg = colors.gray },         -- white on gray
-        c = { fg = colors.white },
+	a = { fg = colors.black, bg = colors.pink },       -- black on light_purple
+	b = { fg = colors.white, bg = colors.gray },         -- white on gray
+	c = { fg = colors.white },
     },
 
     select = {
-        a = { fg = colors.black, bg = colors.select },       -- black on dragon_violet
-        b = { fg = colors.white, bg = colors.gray },
-        c = { fg = colors.white },
+	a = { fg = colors.black, bg = colors.select },       -- black on dragon_violet
+	b = { fg = colors.white, bg = colors.gray },
+	c = { fg = colors.white },
     },
 
     replace = {
-        a = { fg = colors.black, bg = colors.replace },      -- black on lotus_red_2
-        b = { fg = colors.white, bg = colors.gray },
-        c = { fg = colors.white },
+	a = { fg = colors.black, bg = colors.replace },      -- black on lotus_red_2
+	b = { fg = colors.white, bg = colors.gray },
+	c = { fg = colors.white },
     },
 
     command = {
-        a = { fg = colors.black, bg = colors.command },      -- black on carp_yellow
-        b = { fg = colors.white, bg = colors.gray },
-        c = { fg = colors.white },
+	a = { fg = colors.black, bg = colors.command },      -- black on carp_yellow
+	b = { fg = colors.white, bg = colors.gray },
+	c = { fg = colors.white },
     },
 
     terminal = {
-        a = { fg = colors.black, bg = colors.terminal },     -- black on dragon_green
-        b = { fg = colors.white, bg = colors.gray },
-        c = { fg = colors.white },
+	a = { fg = colors.black, bg = colors.terminal },     -- black on dragon_green
+	b = { fg = colors.white, bg = colors.gray },
+	c = { fg = colors.white },
     },
 
     inactive = {
-        a = { fg = colors.white, bg = colors.dark_purple },        -- white on black
-        b = { fg = colors.white, bg = colors.black },
-        c = { fg = colors.white },
+	a = { fg = colors.white, bg = colors.dark_purple },        -- white on black
+	b = { fg = colors.white, bg = colors.black },
+	c = { fg = colors.white },
     }
 }
 

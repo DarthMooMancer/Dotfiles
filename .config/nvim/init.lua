@@ -7,6 +7,11 @@ vim.opt.scrolloff = 8
 vim.opt.shiftwidth = 4
 vim.opt.hlsearch = false
 vim.opt.swapfile = false
+-- vim.opt.foldmethod = "manual"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "1"
+vim.opt.foldtext = ""
 
 require("config.lazy")
 require('config.keybinds')
