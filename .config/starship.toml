@@ -1,7 +1,7 @@
 format = """
 [](#737c73)\
 $username\
-[](bg:#282727)\
+[](bg:#16161d)\
 $git_branch\
 $python\
 $c\
@@ -9,15 +9,9 @@ $golang\
 $java\
 $nodejs\
 $rust\
-[](fg:#282727)\
+[](fg:#0d0c0c)\
 $directory\
 """
-
-# Disable the blank line at the start of the prompt
-# add_newline = false
-
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
 [username]
 show_always = true
 style_user = "bg:#737c73 fg:#0d0c0c"
@@ -46,35 +40,35 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#282727 fg:#c8c093"
+style = "bg:#0d0c0c fg:#c8c093"
 format = '[ $symbol $branch ]($style)'
 
 [c]
 symbol = " "
-style = "bg:#282727 fg:#c8c093"
+style = "bg:#16161d fg:#c8c093"
 format = '[ $symbol $version ]($style)'
 
 [python]
 symbol = " "
-style = "bg:#282727 fg:#c8c093"
+style = "bg:#16161d fg:#c8c093"
 format = '[ $symbol $version ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#282727 fg:#c8c093"
+style = "bg:#16161d fg:#c8c093"
 format = '[ $symbol $version ]($style)'
 
 [java]
 symbol = " "
-style = "bg:#282727 fg:#c8c093"
+style = "bg:#16161d fg:#c8c093"
 format = '[ $symbol $version ]($style)'
 
 [nodejs]
 symbol = " "
-style = "bg:#282727 fg:#c8c093"
+style = "bg:#16161d fg:#c8c093"
 format = '[ $symbol $version ]($style)'
 
 [rust]
 symbol = "󱘗 "
-style = "bg:#282727 fg:#c8c093"
+style = "bg:#16161d fg:#c8c093"
 format = '[ $symbol $version ]($style)'

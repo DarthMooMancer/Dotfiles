@@ -68,7 +68,6 @@ local bubbles_theme = {
     }
 }
 
-
 return {
     'nvim-lualine/lualine.nvim',
     opts = {

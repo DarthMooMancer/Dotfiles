@@ -7,9 +7,8 @@ return {
     opts = {
 	keymap = {
 	    ['<C-y>'] = {},
-	    ['<D-y>'] = { 'select_and_accept' }
+	    ['<M-.>'] = { 'select_and_accept' }
 	},
-
 	appearance = {
 	    nerd_font_variant = 'mono'
 	},
