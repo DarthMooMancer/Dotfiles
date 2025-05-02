@@ -3,7 +3,7 @@ return {
     dependencies = {
 	'rafamadriz/friendly-snippets'
     },
-    tag = 'v1.1.1',
+    tag = 'v1.2.0',
     opts = {
 	keymap = {
 	    ['<C-y>'] = {},
