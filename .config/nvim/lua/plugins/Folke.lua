@@ -2,10 +2,7 @@ return {
     {
 	'folke/noice.nvim',
 	dependencies = {
-	    'MunifTanjim/nui.nvim',
 	    'rcarriga/nvim-notify',
-	    { "norcalli/nvim-colorizer.lua", opts = {} },
-
 	},
 	opts = {
 	    lsp = {
