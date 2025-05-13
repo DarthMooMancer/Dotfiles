@@ -8,7 +8,7 @@ return {
     opts = {
 	keymap = {
 	    ['<C-y>'] = {},
-	    ['<M-.>'] = { 'select_and_accept' },
+	    ['<C-.>'] = { 'select_and_accept' },
 	},
 
 	completion = {

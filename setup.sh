@@ -65,5 +65,15 @@ fi
 ln -sf "$HOME/personal/env/.zshrc" "$target"
 echo "Linked: $HOME/personal/env/.zshrc → $target"
 
+# Link .zshrc file
+target="$HOME/.config/tmux/tmux.conf"
+if [ -L "$target" ]; then
+  echo "Removing existing symlink: $target"
+  rm "$target"
+fi
+
+ln -sf "$HOME/personal/env/.config/tmux/tmux.conf" "$target"
+echo "Linked: $HOME/personal/env/.config/tmux/tmux.conf → $target"
+
 echo
 echo "Done linking all configs."
