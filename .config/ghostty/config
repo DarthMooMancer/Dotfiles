@@ -1,0 +1,21 @@
+font-size = 14
+
+font-family = "JetBrainsMono Nerd Font Mono"
+font-style = "Medium"
+font-thicken = true
+adjust-cell-height = 15%
+window-title-font-family = "JetBrainsMono Nerd Font Mono"
+
+alpha-blending = linear-corrected
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+bold-is-bright = true
+
+theme = "/Applications/Ghostty.app/Contents/Resources/ghostty/themes/Kanagawa Dragon"
+
+mouse-hide-while-typing = true
+
+window-inherit-working-directory = false
+working-directory = home
