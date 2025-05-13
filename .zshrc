@@ -20,4 +20,6 @@ source $HOME/.config/zsh/f-sy-h/F-Sy-H.plugin.zsh
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias vim='nvim'
+alias lgit='lazygit'
 export PATH="/opt/homebrew/opt/unzip/bin:$PATH"
