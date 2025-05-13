@@ -11,4 +11,11 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true })
 vim.keymap.set('n', 'n', 'nzz', { noremap = true })
 vim.keymap.set('n', 'N', 'Nzz', { noremap = true })
+
+-- Plugin specific
+
 vim.keymap.set('n', '<leader>n', ':Neogen<CR>')
+vim.keymap.set('n', '<leader>he', ':Telescope help_tags<CR>')
+vim.keymap.set('n', '<leader><leader>', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>ge', ':Telescope live_grep<CR>')
+vim.keymap.set('n', '<leader>xx', ':Trouble diagnostics toggle<CR>')

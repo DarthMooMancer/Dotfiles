@@ -25,4 +25,5 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias lgit='lazygit'
+alias env='sh ~/personal/env/setup.sh'
 export PATH="/opt/homebrew/opt/unzip/bin:$PATH"

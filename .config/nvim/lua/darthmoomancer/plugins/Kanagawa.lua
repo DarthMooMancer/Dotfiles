@@ -20,7 +20,6 @@ return {
 		FloatTitle = { bg = "none" },
 		NormalDark = { fg = colors.theme.ui.fg_dim, bg = colors.theme.ui.bg_m3 },
 		LazyNormal = { bg = colors.theme.ui.bg_m3, fg = colors.theme.ui.fg_dim },
-		MasonNormal = { bg = colors.theme.ui.bg_m3, fg = colors.theme.ui.fg_dim },
 		TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
 		TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
 		TelescopePromptBorder = { fg = colors.theme.ui.bg_p1, bg = colors.theme.ui.bg_p1 },

@@ -4,6 +4,7 @@ return {
 	'rafamadriz/friendly-snippets',
     },
     tag = 'v1.2.0',
+    event = "InsertEnter",
     opts = {
 	keymap = {
 	    ['<C-y>'] = {},

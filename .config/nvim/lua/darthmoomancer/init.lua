@@ -1,5 +1,5 @@
-require("darthmoomancer.remap")
 require("darthmoomancer.set")
 require("darthmoomancer.lazy")
+require("darthmoomancer.remap")
 require("darthmoomancer.lsp")
 require("darthmoomancer.colors")
