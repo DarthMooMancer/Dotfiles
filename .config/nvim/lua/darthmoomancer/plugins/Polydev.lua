@@ -1,6 +1,6 @@
 return {
     dev = true,
-    dir = '~/Projects/Lua/Polydev',
+    dir = '~/personal/Polydev',
     dependencies = {
 	'MunifTanjim/nui.nvim',
     },

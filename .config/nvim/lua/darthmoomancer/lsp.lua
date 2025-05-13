@@ -1,4 +1,6 @@
--- vim.lsp.enable({'lua_ls', 'clangd'})
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")
+vim.lsp.enable("jdtls")
 
 vim.lsp.config('*', {
     capabilities = require('blink.cmp').get_lsp_capabilities()

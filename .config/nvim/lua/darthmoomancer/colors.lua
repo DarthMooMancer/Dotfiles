@@ -1,0 +1,5 @@
+vim.cmd.colorscheme('kanagawa-dragon')
+vim.cmd("hi! link BlinkCmpMenuBorder Pmenu")
+vim.cmd("hi! link BlinkCmpDoc Pmenu")
+vim.cmd("hi! link BlinkCmpDocBorder Pmenu")
+vim.cmd("hi! link BlinkCmpDocSeparator Pmenu")
