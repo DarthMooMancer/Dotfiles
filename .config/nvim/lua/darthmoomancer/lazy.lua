@@ -6,8 +6,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = "darthmoomancer.plugins",
-    -- checker = { enabled = true },
-    change_detection = {
-	notify = false, -- get a notification when changes are found
-    },
+    change_detection = { notify = false },
 })
