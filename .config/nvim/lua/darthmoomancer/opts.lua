@@ -1,6 +1,4 @@
 vim.g.netrw_banner = 0
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 vim.opt.termguicolors = true
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.mouse =  ""
@@ -14,3 +12,4 @@ vim.opt.swapfile = false
 -- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- vim.opt.foldcolumn = "1"
 -- vim.opt.foldtext = ""
+vim.cmd.colorscheme('kanagawa-dragon')
