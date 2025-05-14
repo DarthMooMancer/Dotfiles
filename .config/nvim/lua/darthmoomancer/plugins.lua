@@ -1,9 +1,15 @@
 return {
-    { dir = '~/personal/Polydev', opts = {} },
+    { dir = '~/personal/Projects/Lua/Polydev',
+	opts = {
+	    globals = {
+		project_root = "~/personal/Projects"
+	    }
+	}
+    },
     { 'MunifTanjim/nui.nvim' },
     { 'nvim-lua/plenary.nvim' },
-    { 'folke/trouble.nvim', lazy = true, opts = {} },
-    { 'folke/which-key.nvim', lazy = true, opts = { preset = "helix" } },
+    { 'folke/trouble.nvim', event = "BufReadPost", opts = {} },
+    { 'folke/which-key.nvim', event = "VeryLazy", opts = { preset = "helix" } },
     { "windwp/nvim-autopairs", event = "BufReadPost", opts = {} },
     { 'neovim/nvim-lspconfig', event = "FileType" },
     { 'nvim-telescope/telescope.nvim',
