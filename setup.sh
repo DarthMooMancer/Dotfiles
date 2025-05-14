@@ -4,76 +4,74 @@ CONFIG_DIR=~/personal/env/.config
 LOCAL_DIR=~/personal/env/.local/bin
 DEST_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 
-echo "Linking configs from $CONFIG_DIR to $DEST_DIR"
-
-# Link config directories
 for dir in "$CONFIG_DIR"/*/; do
   [ -d "$dir" ] || continue
 
   name=$(basename "$dir")
   target="$DEST_DIR/$name"
 
-  # If a symlink already exists, remove it
-  if [ -L "$target" ]; then
-    echo "Removing existing symlink: $target"
-    rm "$target"
-  elif [ -e "$target" ]; then
-    echo "Skipping $name — exists and is not a symlink."
-    continue
-  fi
-
-  # Create the new symlink
-  ln -s "$dir" "$target"
-  echo "Linked: $dir → $target"
+  rm -rf "$target"
+  echo "Removing: $target"
 done
 
 echo
-echo "Linking configs from $LOCAL_DIR to ~/.local/bin"
 
-# Link executables
+for dir in "$CONFIG_DIR"/*/; do
+  [ -d "$dir" ] || continue
+
+  name=$(basename "$dir")
+  target="$DEST_DIR/$name"
+
+  cp -r "$dir" "$target"
+  echo "Copying: $dir → $target"
+done
+
+echo
+echo "Copying executables from $LOCAL_DIR to ~/.local/bin"
+
+mkdir -p "$HOME/.local/bin"
 for file in "$LOCAL_DIR"/*; do
-  [ -f "$file" ] || continue  # only process regular files
+  [ -f "$file" ] || continue
 
   name=$(basename "$file")
   target="$HOME/.local/bin/$name"
 
-  # If a symlink already exists, remove it
-  if [ -L "$target" ]; then
-    echo "Removing existing symlink: $target"
-    rm "$target"
-  elif [ -e "$target" ]; then
-    echo "Skipping $name — exists and is not a symlink."
-    continue
-  fi
-
-  # Create the new symlink
-  ln -s "$file" "$target"
-  echo "Linked: $file → $target"
+  rm -f "$target"
+  cp "$file" "$target"
+  chmod +x "$target"
+  echo "Copied: $file → $target"
 done
 
 echo
-echo "Linking .zshrc to $HOME"
+echo "Copying .zshrc to $HOME"
 
-# Link .zshrc file
 target="$HOME/.zshrc"
-if [ -L "$target" ]; then
-  echo "Removing existing symlink: $target"
-  rm "$target"
-fi
-
-# Create the new symlink
-ln -sf "$HOME/personal/env/.zshrc" "$target"
-echo "Linked: $HOME/personal/env/.zshrc → $target"
-
-# Link .zshrc file
-target="$HOME/.config/tmux/tmux.conf"
-if [ -L "$target" ]; then
-  echo "Removing existing symlink: $target"
-  rm "$target"
-fi
-
-ln -sf "$HOME/personal/env/.config/tmux/tmux.conf" "$target"
-echo "Linked: $HOME/personal/env/.config/tmux/tmux.conf → $target"
+rm -f "$target"
+cp "$HOME/personal/env/.zshrc" "$target"
+echo "Copied: .zshrc → $target"
 
 echo
-echo "Done linking all configs."
+echo "Copying xinitrc config"
+
+target="$HOME/.xinitrc"
+rm -f "$target"
+cp "$HOME/personal/env/.xinitrc" "$target"
+echo "Copied: .xinitrc → $target"
+
+echo
+echo "Copying tmux config"
+
+target="$HOME/.config/tmux/tmux.conf"
+mkdir -p "$(dirname "$target")"
+rm -f "$target"
+cp "$HOME/personal/env/.config/tmux/tmux.conf" "$target"
+echo "Copied: tmux.conf → $target"
+
+echo
+echo "Copying Xmodmap config"
+
+target="$HOME/.Xmodmap"
+mkdir -p "$(dirname "$target")"
+rm -f "$target"
+cp "$HOME/personal/env/.Xmodmap" "$target"
+echo "Copied: .Xmodmap → $target"
