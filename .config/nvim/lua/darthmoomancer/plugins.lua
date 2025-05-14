@@ -1,4 +1,3 @@
-local kanagawa = require("darthmoomancer.extras.kanagawa")
 return {
     { dir = '~/personal/Polydev', opts = {} },
     { 'MunifTanjim/nui.nvim' },
@@ -6,7 +5,7 @@ return {
     { 'folke/trouble.nvim', lazy = true, opts = {} },
     { 'folke/which-key.nvim', lazy = true, opts = { preset = "helix" } },
     { "windwp/nvim-autopairs", event = "BufReadPost", opts = {} },
-    { 'neovim/nvim-lspconfig', event = { "BufReadPre" } },
+    { 'neovim/nvim-lspconfig', event = "FileType" },
     { 'nvim-telescope/telescope.nvim',
 	event = "VeryLazy",
 	dependencies ={ 'nvim-tree/nvim-web-devicons' },
@@ -17,11 +16,11 @@ return {
 	    },
 	}
     },
-    { 'lewis6991/gitsigns.nvim', event = "BufReadPost", dependencies = { 'tpope/vim-fugitive' },  opts = {} },
+    { 'lewis6991/gitsigns.nvim', event = "BufReadPost", opts = {} },
     { 'nvim-lualine/lualine.nvim', event = "VeryLazy",
 	opts = {
 	    options = {
-		theme = kanagawa,
+		theme = require("darthmoomancer.extras.kanagawa"),
 		component_separators = '',
 		section_separators = { left = '', right = '' },
 	    },
@@ -34,7 +33,7 @@ return {
 	}
     },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
-	event = "BufReadPost",
+	event = "FileType",
 	config = function ()
 	    require("nvim-treesitter.configs").setup {
 		highlight = { enable = true,
