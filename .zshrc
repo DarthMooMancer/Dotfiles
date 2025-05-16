@@ -1,6 +1,6 @@
 HISTFILE=~/.zsh_history
-HISTSIZE=150
-SAVEHIST=500
+HISTSIZE=100
+SAVEHIST=200
 
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -20,7 +20,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
     export VCPKG_ROOT="/Users/andrewhaynes/vcpkg"
     export PATH="$VCPKG_ROOT:$PATH"
-    export TERM=tmux-256color
     export PATH="/opt/homebrew/opt/unzip/bin:$PATH"
 
     return

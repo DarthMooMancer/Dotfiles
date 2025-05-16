@@ -6,6 +6,15 @@ return {
 	    }
 	}
     },
+    {
+	"folke/lazydev.nvim",
+	ft = "lua",
+	opts = {
+	    library = {
+		{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+	    },
+	},
+    },
     { 'MunifTanjim/nui.nvim' },
     { 'nvim-lua/plenary.nvim' },
     { 'folke/trouble.nvim', event = "BufReadPost", opts = {} },
@@ -83,10 +92,8 @@ return {
 	opts = {
 	    keymap = {
 		['<C-y>'] = {},
-		['<M-.>'] = { 'select_and_accept' } -- Use on Macos
-		-- ['<C-.>'] = { 'select_and_accept' }, -- Use on Linux
+		['<M-.>'] = { 'select_and_accept' }
 	    },
-
 	    signature = { enabled = true },
 	    completion = {
 		accept = { auto_brackets = { enabled = true }, },
@@ -94,7 +101,7 @@ return {
 		    border = "rounded",
 		    scrollbar = false,
 		    auto_show = true,
-		    draw = { columns = { { "label", "label_description" , "kind" } } }
+		    draw = { columns = { { "label", "label_description" , "kind", gap = 1 } } }
 		},
 		documentation = {
 		    auto_show = true,

@@ -11,8 +11,13 @@ vim.opt.scrolloff = 8
 vim.opt.shiftwidth = 4
 vim.opt.hlsearch = false
 vim.opt.swapfile = false
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
--- vim.opt.foldcolumn = "1"
--- vim.opt.foldtext = ""
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "lua",
+    callback = function()
+        vim.opt_local.foldmethod = "expr"
+        vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        vim.opt_local.foldcolumn = "1"
+        vim.opt_local.foldtext = ""
+    end,
+})
 vim.cmd.colorscheme('kanagawa-dragon')
