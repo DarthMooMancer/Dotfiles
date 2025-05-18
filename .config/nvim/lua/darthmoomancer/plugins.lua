@@ -1,8 +1,8 @@
 local function scheme(a_bg, a_fg)
     return {
-	a = { fg = a_fg or '#0d0c0c', bg = a_bg },
-	b = { fg = '#c8c093', bg = '#3a3939' },
-	c = { fg = '#c8c093', bg = '#202020' },
+	a = { fg = a_fg or "#0d0c0c", bg = a_bg },
+	b = { fg = "#c8c093", bg = "#3a3939" },
+	c = { fg = "#c8c093", bg = "#202020" },
     }
 end
 
@@ -12,15 +12,15 @@ local lualine = {
     visual   = scheme("#b6927b"),
     command  = scheme("#e6c384"),
     terminal = scheme("#87a987"),
-    inactive = scheme("#393836", '#c8c093'),
+    inactive = scheme("#393836", "#c8c093"),
 }
 
 return {
-    'MunifTanjim/nui.nvim' ,
-    'nvim-lua/plenary.nvim' ,
-    'nvim-tree/nvim-web-devicons',
-    { 'rafamadriz/friendly-snippets', event = "InsertEnter" },
-    { dir = '~/personal/Projects/Lua/Polydev',
+    "MunifTanjim/nui.nvim" ,
+    "nvim-lua/plenary.nvim" ,
+    "nvim-tree/nvim-web-devicons",
+    { "rafamadriz/friendly-snippets", event = "InsertEnter" },
+    { dir = "~/personal/Projects/Lua/Polydev",
 	opts = {
 	    globals = {
 		project_root = "~/personal/Projects"
@@ -36,10 +36,10 @@ return {
 	    },
 	},
     },
-    { 'folke/trouble.nvim', event = "BufReadPost" },
+    { "folke/trouble.nvim", event = "BufReadPost" },
     { "windwp/nvim-autopairs", event = "BufReadPost" },
-    { 'neovim/nvim-lspconfig', event = "FileType" },
-    { 'nvim-telescope/telescope.nvim',
+    { "neovim/nvim-lspconfig", event = "FileType" },
+    { "nvim-telescope/telescope.nvim",
 	event = "VeryLazy",
 	opts = {
 	    defaults = {
@@ -48,19 +48,19 @@ return {
 	    },
 	}
     },
-    { 'lewis6991/gitsigns.nvim', event = "BufReadPost" },
-    { 'nvim-lualine/lualine.nvim', event = "VeryLazy",
+    { "lewis6991/gitsigns.nvim", event = "BufReadPost" },
+    { "nvim-lualine/lualine.nvim", event = "VeryLazy",
 	opts = {
 	    options = {
 		theme = lualine,
-		component_separators = '',
-		section_separators = { left = '', right = '' },
+		component_separators = "",
+		section_separators = { left = "", right = "" },
 	    },
 	    sections = {
-		lualine_b = { 'branch' },
-		lualine_c = { { 'filename', path = 3 } },
-		lualine_x = { 'diff', 'diagnostics' },
-		lualine_y = { 'filetype' },
+		lualine_b = { "branch" },
+		lualine_c = { { "filename", path = 3 } },
+		lualine_x = { "diff", "diagnostics" },
+		lualine_y = { "filetype" },
 	    },
 	}
     },
@@ -75,13 +75,13 @@ return {
 	    }
 	end
     },
-    { 'rebelot/kanagawa.nvim',
+    { "rebelot/kanagawa.nvim",
 	opts = {
 	    colors = {
 		theme = {
 		    all = {
 			ui = {
-			    bg_gutter = 'none'
+			    bg_gutter = "none"
 			}
 		    }
 		}
@@ -104,11 +104,11 @@ return {
 	    } end,
 	},
     },
-    { 'saghen/blink.cmp', tag = 'v1.3.0', event = "InsertEnter",
+    { "saghen/blink.cmp", tag = "v1.3.0", event = "InsertEnter",
 	opts = {
 	    keymap = {
-		['<C-y>'] = {},
-		['<M-.>'] = { 'select_and_accept' }
+		["<C-y>"] = {},
+		["<M-.>"] = { "select_and_accept" }
 	    },
 	    signature = { enabled = true },
 	    completion = {

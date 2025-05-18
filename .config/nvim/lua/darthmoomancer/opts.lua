@@ -20,4 +20,4 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.foldtext = ""
     end,
 })
-vim.cmd.colorscheme('kanagawa-dragon')
+vim.cmd.colorscheme("kanagawa-dragon")
