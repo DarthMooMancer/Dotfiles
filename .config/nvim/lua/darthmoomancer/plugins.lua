@@ -1,9 +1,30 @@
+local function scheme(a_bg, a_fg)
+    return {
+	a = { fg = a_fg or '#0d0c0c', bg = a_bg },
+	b = { fg = '#c8c093', bg = '#3a3939' },
+	c = { fg = '#c8c093', bg = '#202020' },
+    }
+end
+
+local lualine = {
+    normal   = scheme("#737c73"),
+    insert   = scheme("#949fb5"),
+    visual   = scheme("#b6927b"),
+    command  = scheme("#e6c384"),
+    terminal = scheme("#87a987"),
+    inactive = scheme("#393836", '#c8c093'),
+}
+
 return {
+    'MunifTanjim/nui.nvim' ,
+    'nvim-lua/plenary.nvim' ,
+    'nvim-tree/nvim-web-devicons',
+    { 'rafamadriz/friendly-snippets', event = "InsertEnter" },
     { dir = '~/personal/Projects/Lua/Polydev',
 	opts = {
 	    globals = {
 		project_root = "~/personal/Projects"
-	    }
+	    },
 	}
     },
     {
@@ -15,15 +36,11 @@ return {
 	    },
 	},
     },
-    { 'MunifTanjim/nui.nvim' },
-    { 'nvim-lua/plenary.nvim' },
-    { 'folke/trouble.nvim', event = "BufReadPost", opts = {} },
-    { 'folke/which-key.nvim', event = "VeryLazy", opts = { preset = "helix" } },
-    { "windwp/nvim-autopairs", event = "BufReadPost", opts = {} },
+    { 'folke/trouble.nvim', event = "BufReadPost" },
+    { "windwp/nvim-autopairs", event = "BufReadPost" },
     { 'neovim/nvim-lspconfig', event = "FileType" },
     { 'nvim-telescope/telescope.nvim',
 	event = "VeryLazy",
-	dependencies ={ 'nvim-tree/nvim-web-devicons' },
 	opts = {
 	    defaults = {
 		layout_config = { prompt_position = "top" },
@@ -31,11 +48,11 @@ return {
 	    },
 	}
     },
-    { 'lewis6991/gitsigns.nvim', event = "BufReadPost", opts = {} },
+    { 'lewis6991/gitsigns.nvim', event = "BufReadPost" },
     { 'nvim-lualine/lualine.nvim', event = "VeryLazy",
 	opts = {
 	    options = {
-		theme = require("darthmoomancer.extras.kanagawa"),
+		theme = lualine,
 		component_separators = '',
 		section_separators = { left = '', right = '' },
 	    },
@@ -88,7 +105,6 @@ return {
 	},
     },
     { 'saghen/blink.cmp', tag = 'v1.3.0', event = "InsertEnter",
-	dependencies = { 'rafamadriz/friendly-snippets', lazy = true },
 	opts = {
 	    keymap = {
 		['<C-y>'] = {},
