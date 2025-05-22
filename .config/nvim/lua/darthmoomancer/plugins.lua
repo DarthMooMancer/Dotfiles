@@ -1,8 +1,12 @@
 return {
+    { "nvim-tree/nvim-web-devicons", lazy = true },
+    { "MunifTanjim/nui.nvim", lazy = true },
+    { "windwp/nvim-autopairs", event = "BufReadPost", opts = {} },
+    { "neovim/nvim-lspconfig", event = "FileType" },
     { "nvim-lualine/lualine.nvim", event = "VeryLazy",
 	opts = {
 	    options = {
-		theme = require("darthmoomancer.extras.kanagawa").lualine,
+		theme = require("darthmoomancer.lualine").lualine,
 		component_separators = "",
 		section_separators = { left = "", right = "" },
 	    },
@@ -14,21 +18,17 @@ return {
 	    },
 	}
     },
-    { "nvim-tree/nvim-web-devicons", lazy = true },
-    { "MunifTanjim/nui.nvim", lazy = true },
-    { "windwp/nvim-autopairs", event = "BufReadPost", opts = {} },
-    { "neovim/nvim-lspconfig", event = "FileType" },
-    { "lewis6991/gitsigns.nvim", event = "BufReadPost", opts = {} },
-    { "neanias/everforest-nvim",
+    { "neanias/everforest-nvim", event = "VeryLazy",
 	config = function()
 	    require("everforest").setup({
 		on_highlights = function(hl)
-		    hl.Normal = {bg = "#181616"}
+		    hl.Normal = { bg = "#181616" }
 		end,
 	    })
+	    vim.cmd.colorscheme("everforest")
 	end
     },
-    { "ibhagwan/fzf-lua",
+    { "ibhagwan/fzf-lua", event = "VeryLazy",
 	opts = {
 	    fzf_opts = {
 		["--pointer"] = " ",
@@ -66,24 +66,15 @@ return {
 		["<C-y>"] = {},
 		["<M-.>"] = { "select_and_accept" }
 	    },
-	    signature = { enabled = true },
-
 	    completion = {
 		menu = {
-		    border = "rounded",
-		    scrollbar = false,
-		    auto_show = true,
 		    draw = { columns = { { "label", "label_description" , "kind", gap = 1 } } }
 		},
 		documentation = {
 		    auto_show = true,
-		    auto_show_delay_ms = 500,
-		    window = {
-			border = "rounded",
-			scrollbar = false,
-		    }
 		}
-	    }
+	    },
+	    signature = { enabled = true },
 	}
     }
 }

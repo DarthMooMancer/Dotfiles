@@ -1,5 +1,5 @@
 require("darthmoomancer.lazy")
-require("darthmoomancer.opts")
 require("darthmoomancer.remap")
-require("darthmoomancer.lsp")
 
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")

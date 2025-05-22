@@ -1,4 +1,5 @@
 local M = {}
+
 local function scheme(a_bg, a_fg)
     return {
 	a = { fg = a_fg or "#0d0c0c", bg = a_bg },
