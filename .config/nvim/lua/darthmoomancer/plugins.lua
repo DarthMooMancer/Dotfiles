@@ -1,25 +1,8 @@
-local function scheme(a_bg, a_fg)
-    return {
-	a = { fg = a_fg or "#0d0c0c", bg = a_bg },
-	b = { fg = "#c8c093", bg = "#3a3939" },
-	c = { fg = "#c8c093", bg = "#202020" },
-    }
-end
-
-local lualine = {
-    normal   = scheme("#859289"),
-    insert   = scheme("#7fbbb3"),
-    visual   = scheme("#e69875"),
-    command  = scheme("#dbbc7f"),
-    terminal = scheme("#83c092"),
-    inactive = scheme("#1e2326", "#d3c6aa"),
-}
-
 return {
     { "nvim-lualine/lualine.nvim", event = "VeryLazy",
 	opts = {
 	    options = {
-		theme = lualine,
+		theme = require("darthmoomancer.extras.kanagawa").lualine,
 		component_separators = "",
 		section_separators = { left = "", right = "" },
 	    },
@@ -66,21 +49,6 @@ return {
 	    },
 	},
     },
-    --    { "nvim-lualine/lualine.nvim", event = "VeryLazy",
-    -- opts = {
-    --     options = {
-    -- 	theme = lualine,
-    -- 	component_separators = "",
-    -- 	section_separators = { left = "", right = "" },
-    --     },
-    --     sections = {
-    -- 	lualine_b = { "branch" },
-    -- 	lualine_c = { "filename" },
-    -- 	lualine_x = { "diagnostics" },
-    -- 	lualine_y = { "filetype" },
-    --     },
-    -- }
-    --    },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = "FileType",
 	config = function ()
 	    require("nvim-treesitter.configs").setup {
